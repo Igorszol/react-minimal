@@ -15,5 +15,7 @@ const AppTitle = () => (
   const bigger =(n) => {return n>15};
   console.log(tab.filter(bigger));
 
+  const tab2= [2, 5, 8, 10]
+  console.log(tab2.map(Math.sqrt));
 
   export default AppTitle
