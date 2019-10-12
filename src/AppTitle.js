@@ -10,5 +10,10 @@ const AppTitle = () => (
   
   const generateRandomArray= (n) => Array.from({length: n}, (v, k) => k=Math.floor(Math.random() * 25) + 1);
   console.log(generateRandomArray(15));
-  
+
+  const tab= [2, 56, 23, 88, 17, 4]
+  const bigger =(n) => {return n>15};
+  console.log(tab.filter(bigger));
+
+
   export default AppTitle
