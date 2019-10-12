@@ -1,4 +1,5 @@
 import React from 'react'
+import { render } from 'react-dom'
 
 const AppTitle = () => (
     <div><h1>AppTitle </h1>  
@@ -12,7 +13,7 @@ const AppTitle = () => (
   console.log(generateRandomArray(15));
 
   const tab= [2, 56, 23, 88, 17, 4]
-  const bigger =(n) => {return n>15};
+  function bigger(n)  {return n>15};
   console.log(tab.filter(bigger));
 
   const tab2= [2, 5, 8, 10]
@@ -78,6 +79,48 @@ const AppTitle = () => (
         }
       ]
 
-      
+  
+  document.getElementById("all").onclick = function() {myFunction1()};
+  function myFunction1() 
+  {
+    var uczniowie=[];
+    data.forEach(element => {
+          element.students.forEach(stud =>{uczniowie.push(stud.name)})})
+    var wypisz = uczniowie.map((ucz) =>
+    <li key={ucz}>{ucz}</li>);
+    render(<ul>{wypisz}</ul>,
+        document.getElementById('lista')
+      );
+}
+
+document.getElementById("sort").onclick = function() {myFunction2()};
+function myFunction2() 
+{
+  var uczniowie=[];
+  data.forEach(element => {
+        element.students.forEach(stud =>{uczniowie.push(stud.name)})});
+uczniowie.sort();
+  var wypisz = uczniowie.map((ucz) =>
+  <li key={ucz}>{ucz}</li>);
+  render(<ul>{wypisz}</ul>,
+      document.getElementById('lista')
+    );
+}
+
+document.getElementById("old").onclick = function() {myFunction3()};
+  function myFunction3() 
+  {
+    var uczniowie=[];
+    data.forEach(element => {
+        if(element.active==true)
+          element.students.forEach(stud =>{
+              if(stud.age>20)
+              uczniowie.push(stud.name)})})
+    var wypisz = uczniowie.map((ucz) =>
+    <li key={ucz}>{ucz}</li>);
+    render(<ul>{wypisz}</ul>,
+        document.getElementById('lista')
+      );
+}
 
   export default AppTitle
