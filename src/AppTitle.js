@@ -6,7 +6,7 @@ const AppTitle = () => (
     </div>    
   )
   
-  const generateArray = (n) => Array.from({length: n}, (v, k) => k+1); 
+  const generateArray = (n) => Array.from({length: n}, (v,k) => k+1); 
   console.log(generateArray(15));
   
   const generateRandomArray= (n) => Array.from({length: n}, (v, k) => k=Math.floor(Math.random() * 25) + 1);
